@@ -19,7 +19,7 @@ This is a basic blog project built with Django. The project demonstrates advance
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/django-blog.git
+    git clone https://github.com/your-username/django-blog-crud.git
     cd django-blog
     ```
 
