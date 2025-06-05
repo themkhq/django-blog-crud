@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% if form.instance.id %}Update Blog{% else %}Add Blog{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-gray-800">
+            Add / Update Blog
+        </h1>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="flex justify-end space-x-3 mt-4">
+                <a href="{{ request.META.HTTP_REFERER|default:'/' }}"
+                    class="px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
+                    Cancel
+                </a>
+                <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
